@@ -21,3 +21,15 @@ after_success:
   - docker push huiqzhang619/multi-nginx
   - docker push huiqzhang619/multi-server
   - docker push huiqzhang619/multi-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: "cn-northwest-1"
+  app: "zhang-docker"
+  env: "ZhangDocker-env"
+  bucket_name: "elasticbeanstalk-cn-northwest-1-796401082536"
+  bucket_path: "zhang-docker"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
