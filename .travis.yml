@@ -23,6 +23,7 @@ after_success:
   - docker push huiqzhang619/multi-worker
 
 deploy:
+  edge: true
   provider: elasticbeanstalk
   region: "cn-northwest-1"
   app: "zhang-docker"
